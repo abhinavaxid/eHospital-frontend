@@ -17,9 +17,10 @@ export const routes: Routes = [
     children: [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'register-patient', component: PatientRegistrationComponent },
-      { path: 'patients-list', component: PatientListComponent }
+      { path: 'patients-list', component: PatientListComponent },
+      {path: 'patient-registration/:patientId', component: PatientRegistrationComponent}
     ]
   },
+  { path: '**', redirectTo: 'dashboard' },
 
-  { path: '**', redirectTo: 'dashboard' }
 ];

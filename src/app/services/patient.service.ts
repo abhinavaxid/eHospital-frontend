@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface Patient {
-  patientId: number;
-  patientName: string; // Matches API field
+  patientId?: number; // Made optional for registration
+  patientName: string;
   patientAddress: string;
   patientAge: number;
   patientContact: string;
@@ -13,23 +13,33 @@ export interface Patient {
   cardExpiryDate: string;
   ehealthFacilityId: number;
   createdIp: string;
+  email?: string;
 }
 
 @Injectable({ providedIn: 'root' })
 export class PatientService {
   private baseUrl = 'http://localhost:8080/api/patients';
+  private facilityUrl = 'http://localhost:8080/api/facilities';
 
   constructor(private http: HttpClient) {}
 
-  registerPatient(data: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}/register`, data);
+  registerPatient(data: Patient): Observable<Patient> {
+    return this.http.post<Patient>(`${this.baseUrl}/register`, data);
   }
 
   getAllPatients(): Observable<Patient[]> {
     return this.http.get<Patient[]>(`${this.baseUrl}/list`);
   }
 
-  updatePatient(patient: Patient): Observable<any> {
-    return this.http.put(`${this.baseUrl}/update`, patient);
+  updatePatient(patient: Patient): Observable<Patient> {
+    return this.http.put<Patient>(`${this.baseUrl}/update`, patient);
+  }
+
+  getPatientById(patientId: number): Observable<Patient> {
+    return this.http.get<Patient>(`${this.baseUrl}/${patientId}`);
+  }
+
+  getFacilities(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.facilityUrl}/list`);
   }
 }
