@@ -1,0 +1,145 @@
+.patient-list-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  max-height: 80vh; 
+  overflow-y: auto; 
+  display: flex;
+  flex-direction: column; 
+}
+
+.all{
+  padding-top: 30px;
+}
+
+.patient-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 100%; 
+}
+
+
+table {
+  display: table;
+  table-layout: auto; 
+}
+
+
+.patient-list-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.patient-list-container::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.patient-list-container::-webkit-scrollbar-thumb {
+  background: #6b7280;
+  border-radius: 4px;
+}
+
+.patient-list-container::-webkit-scrollbar-thumb:hover {
+  background: #1a3c34;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.header h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1a3c34;
+  margin-bottom: 8px;
+}
+
+.header p {
+  font-size: 16px;
+  color: #6b7280;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 400px;
+}
+
+.search-bar .mat-form-field-wrapper {
+  padding-bottom: 1.25em;
+}
+
+.search-bar input {
+  font-size: 14px;
+}
+
+.search-bar mat-icon {
+  color: #6b7280;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+th.mat-header-cell {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a3c34;
+  background-color: #f8fafc;
+  padding: 12px;
+  text-align: left;
+}
+
+td.mat-cell {
+  font-size: 14px;
+  color: #374151;
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+tr.mat-row:hover {
+  background-color: #f1f5f9;
+  transition: background-color 0.2s ease;
+}
+
+.status-icon {
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+@media (max-width: 600px) {
+  .patient-list-container {
+      margin: 20px;
+      padding: 16px;
+      max-height: 70vh; 
+  }
+
+  .header h2 {
+      font-size: 24px;
+  }
+
+  .header p {
+      font-size: 14px;
+  }
+
+  .search-bar {
+      max-width: 100%;
+  }
+
+  th.mat-header-cell,
+  td.mat-cell {
+      font-size: 12px;
+      padding: 8px;
+  }
+}

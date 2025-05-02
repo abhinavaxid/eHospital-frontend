@@ -1,0 +1,65 @@
+<div class="all">
+  <div class="form-container">
+    <div class="form-header">
+      <h2>Patient Registration</h2>
+      <p>Please fill out the form below to register a new patient.</p>
+    </div>
+  
+    <form [formGroup]="registrationForm" (ngSubmit)="submitForm()" class="registration-form">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Full Name</mat-label>
+        <input matInput formControlName="fullName" required>
+      </mat-form-field>
+  
+      <div class="form-row">
+        <mat-form-field appearance="outline" class="half-width">
+          <mat-label>Age</mat-label>
+          <input matInput type="number" formControlName="age" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="half-width">
+          <mat-label>Gender</mat-label>
+          <mat-select formControlName="gender" required>
+            <mat-option value="MALE">Male</mat-option>
+            <mat-option value="FEMALE">Female</mat-option>
+            <mat-option value="Other">Other</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+  
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Contact Number</mat-label>
+        <input matInput formControlName="contactNumber" required>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email">
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Address</mat-label>
+        <textarea matInput formControlName="address" rows="3"></textarea>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Facility</mat-label>
+        <mat-select formControlName="facilityId" required>
+          <mat-option *ngFor="let facility of facilities" [value]="facility.id">
+            {{ facility.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <!-- Hidden field for cardRegistrationDate (not shown to user) -->
+      <input type="hidden" formControlName="cardRegistrationDate">
+  
+      <div class="form-actions">
+        <button mat-raised-button color="primary" type="submit">Register Patient</button>
+      </div>
+    </form>
+  </div>
+  
+</div>
+
+

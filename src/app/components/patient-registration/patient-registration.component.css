@@ -1,0 +1,121 @@
+.form-container {
+  max-width: 700px;
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-height: 70vh; /* Set maximum height to enable scrolling */
+  overflow-y: auto; /* Enable vertical scrolling inside the card */
+  display: flex;
+  flex-direction: column; /* Ensure content stacks vertically */
+}
+
+.all{
+  padding-top: 88px;
+  padding-left: 350px;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.form-header h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1a3c34;
+  margin-bottom: 8px;
+}
+
+.form-header p {
+  font-size: 16px;
+  color: #6b7280;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.half-width {
+  width: 50%;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+/* Optional: Style the scrollbar for better aesthetics */
+.form-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.form-container::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.form-container::-webkit-scrollbar-thumb {
+  background: #6b7280;
+  border-radius: 4px;
+}
+
+.form-container::-webkit-scrollbar-thumb:hover {
+  background: #1a3c34;
+}
+
+/* Remove the redundant .content class and its overflow rule since it’s not used in the HTML */
+button[mat-raised-button] {
+  padding: 0 24px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+button[mat-raised-button]:hover {
+}
+
+mat-form-field {
+  font-size: 14px;
+}
+
+mat-form-field .mat-form-field-wrapper {
+  padding-bottom: 1.25em;
+}
+
+@media (max-width: 600px) {
+  .form-container {
+      padding: 16px;
+      max-height: 60vh; /* Adjusted for mobile screens */
+  }
+
+  .form-row {
+      flex-direction: column;
+      gap: 8px;
+  }
+
+  .half-width {
+      width: 100%;
+  }
+
+  .form-header h2 {
+      font-size: 24px;
+  }
+
+  .form-header p {
+      font-size: 14px;
+  }
+}

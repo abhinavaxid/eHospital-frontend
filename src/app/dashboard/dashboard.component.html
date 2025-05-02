@@ -1,0 +1,12 @@
+<div class="dashboard-container">
+  <mat-card class="dashboard-card">
+    <h2 class="dashboard-title">Welcome to eHospital Dashboard</h2>
+    <p class="dashboard-subtitle">This is a protected route.</p>
+
+    <div class="dashboard-actions">
+      <button mat-raised-button color="primary" routerLink="/register-patient">Register Patient</button>
+      <button mat-raised-button color="primary" routerLink="/patients-list">View Patients</button>
+      <button mat-raised-button color="warn" (click)="logout()">Logout</button>
+    </div>
+  </mat-card>
+</div>

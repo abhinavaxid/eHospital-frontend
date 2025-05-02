@@ -1,0 +1,13 @@
+<mat-toolbar color="primary" class="header">
+  <span class="app-title" (click)="goToDashboard()">eHospital</span>
+  <span class="spacer"></span>
+  <button mat-button color="warn" (click)="logout()">Logout</button>
+</mat-toolbar>
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
+
+<mat-toolbar class="footer" color="primary">
+  <span class="footer-text">© 2025 eHospital System</span>
+</mat-toolbar>

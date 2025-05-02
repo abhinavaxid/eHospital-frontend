@@ -1,0 +1,57 @@
+:host {
+    display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f9fafb; /* unified background */
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    /* background-color:#1089a3; */
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    justify-content: center;
+}
+
+.footer-text {
+    font-size: 14px; /* Decreased font size */
+}
+
+/* .content {
+    flex: 1;
+    margin-top: 64px;
+    margin-bottom: 56px;
+    overflow-y: auto;
+    padding: 0 ;
+    box-sizing: border-box;
+    background-color: #f9fafb; 
+  } */
+  
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.app-title {
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+mat-card {
+    max-width: 800px;
+    
+    padding: 24px;
+    text-align: center;
+  }
+  
