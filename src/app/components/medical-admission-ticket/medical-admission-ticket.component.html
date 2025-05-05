@@ -1,0 +1,57 @@
+<div class="all">
+    <mat-card>    <h2>Create Medical Admission Ticket</h2>
+        <form [formGroup]="ticketForm" (ngSubmit)="submit()">
+      
+          <mat-form-field appearance="fill">
+            <mat-label>Patient ID</mat-label>
+            <input matInput formControlName="patientId" type="number" />
+          </mat-form-field>
+      
+          <mat-form-field appearance="fill">
+            <mat-label>Facility</mat-label>
+            <mat-select formControlName="ehealthFacilityId">
+              <mat-option *ngFor="let facility of facilities" [value]="facility.ehealthFacilityId">
+                {{ facility.ehealthFacilityName }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+      
+          <mat-form-field appearance="fill">
+            <mat-label>Doctor</mat-label>
+            <mat-select formControlName="doctorId">
+              <mat-option *ngFor="let doctor of doctors" [value]="doctor.doctorId">
+                {{ doctor.doctorName }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+      
+          <mat-form-field appearance="fill">
+            <mat-label>Unit</mat-label>
+            <mat-select formControlName="unitId">
+              <mat-option *ngFor="let unit of units" [value]="unit.unitId">
+                {{ unit.unitName }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+      
+          <mat-form-field appearance="fill">
+            <mat-label>Bed</mat-label>
+            <mat-select formControlName="bedId">
+              <mat-option *ngFor="let bed of beds" [value]="bed.bedId">
+                Bed {{ bed.bedNumber }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+      
+          <mat-form-field appearance="fill">
+            <mat-label>Provisional Diagnosis</mat-label>
+            <textarea matInput formControlName="provisionalDiagnosis"></textarea>
+          </mat-form-field>
+      
+          <button mat-raised-button color="primary" type="submit">Submit</button>
+        </form>
+      </mat-card>
+</div>
+
+
+  
