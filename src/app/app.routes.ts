@@ -6,6 +6,7 @@ import { PatientRegistrationComponent } from '@app/components/patient-registrati
 import { PatientListComponent } from '@app/components/patient-list/patient-list.component';
 import { LayoutComponent } from './layout/layout.component';
 import { MedicalAdmissionTicketComponent } from '@app/components/medical-admission-ticket/medical-admission-ticket.component';
+import { MedicalTicketListComponent } from '@app/components/medical-ticket-list/medical-ticket-list.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -20,7 +21,9 @@ export const routes: Routes = [
       { path: 'register-patient', component: PatientRegistrationComponent },
       { path: 'patients-list', component: PatientListComponent },
       {path: 'patient-registration/:patientId', component: PatientRegistrationComponent},
-      { path: 'create-ticket', component: MedicalAdmissionTicketComponent }
+      { path: 'create-ticket', component: MedicalAdmissionTicketComponent },
+      { path: 'admission-tickets', component: MedicalTicketListComponent }
+
     ]
   },
   { path: '**', redirectTo: 'dashboard' },

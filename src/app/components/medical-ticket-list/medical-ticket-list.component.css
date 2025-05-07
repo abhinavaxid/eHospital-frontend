@@ -1,0 +1,234 @@
+.all{
+    padding-top: 60px;
+}
+
+.ticket-list-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.header h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #1a3c34;
+    margin-bottom: 8px;
+}
+
+.header p {
+    font-size: 16px;
+    color: #6b7280;
+}
+
+.ticket-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th.mat-header-cell {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a3c34;
+    background-color: #f8fafc;
+    padding: 12px;
+    text-align: left;
+}
+
+td.mat-cell {
+    font-size: 14px;
+    color: #374151;
+    padding: 12px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+tr.mat-row:hover {
+    background-color: #f1f5f9;
+    transition: background-color 0.2s ease;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.status-badge.active {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.status-badge.expired {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+@media (max-width: 600px) {
+    .ticket-list-container {
+        margin: 20px;
+        padding: 16px;
+    }
+
+    .header h2 {
+        font-size: 17px;
+    }
+
+    .header p {
+        font-size: 10px;
+    }
+
+    th.mat-header-cell,
+    td.mat-cell {
+        font-size: 10px;
+        padding: 8px;
+    }
+
+    .status-badge {
+        padding: 2px 8px;
+        font-size: 10px;
+    }
+}
+
+.ticket-list-container {
+    max-width: 1000px;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    max-height: 70vh;
+    /* Set maximum height to enable scrolling */
+    overflow-y: auto;
+    /* Enable vertical scrolling inside the card */
+    display: flex;
+    flex-direction: column;
+    /* Ensure content stacks vertically */
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.header h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #1a3c34;
+    margin-bottom: 8px;
+}
+
+.header p {
+    font-size: 16px;
+    color: #6b7280;
+}
+
+.ticket-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 100%;
+    /* Ensure table doesn't shrink too much */
+}
+
+table {
+    display: table;
+    table-layout: auto;
+    /* Allow table to adjust column widths naturally */
+}
+
+th.mat-header-cell {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a3c34;
+    background-color: #f8fafc;
+    padding: 12px;
+    text-align: left;
+}
+
+td.mat-cell {
+    font-size: 14px;
+    color: #374151;
+    padding: 12px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+tr.mat-row:hover {
+    background-color: #f1f5f9;
+    transition: background-color 0.2s ease;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.status-badge.active {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.status-badge.expired {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+/* Custom scrollbar styling */
+.ticket-list-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.ticket-list-container::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 4px;
+}
+
+.ticket-list-container::-webkit-scrollbar-thumb {
+    background: #6b7280;
+    border-radius: 4px;
+}
+
+.ticket-list-container::-webkit-scrollbar-thumb:hover {
+    background: #1a3c34;
+}
+
+@media (max-width: 600px) {
+    .ticket-list-container {
+        padding: 16px;
+        max-height: 60vh;
+        /* Adjusted for mobile screens */
+    }
+
+    .header h2 {
+        font-size: 24px;
+        /* Slightly larger than original for better readability */
+    }
+
+    .header p {
+        font-size: 14px;
+        /* Slightly larger than original for better readability */
+    }
+
+    th.mat-header-cell,
+    td.mat-cell {
+        font-size: 12px;
+        /* Slightly larger than original for better readability */
+        padding: 8px;
+    }
+
+    .status-badge {
+        padding: 2px 8px;
+        font-size: 10px;
+    }
+}

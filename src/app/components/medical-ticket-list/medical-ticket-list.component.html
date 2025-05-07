@@ -1,0 +1,60 @@
+<div class="all">
+  <mat-card class="ticket-list-container">
+    <div class="header">
+      <h2>Medical Admission Tickets</h2>
+      <p>View all medical admission tickets and their status.</p>
+    </div>
+  
+    <table mat-table [dataSource]="dataSource" class="ticket-table" matSort>
+      <!-- Patient ID -->
+      <ng-container matColumnDef="patientId">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Patient ID</th>
+        <td mat-cell *matCellDef="let ticket">{{ ticket.patientId }}</td>
+      </ng-container>
+  
+      <!-- Facility -->
+      <ng-container matColumnDef="ehealthFacilityName">
+        <th mat-header-cell *matHeaderCellDef>Facility</th>
+        <td mat-cell *matCellDef="let ticket">{{ ticket.ehealthFacilityName }}</td>
+      </ng-container>
+  
+      <!-- Doctor -->
+      <ng-container matColumnDef="doctorName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Doctor</th>
+        <td mat-cell *matCellDef="let ticket">{{ ticket.doctorName }}</td>
+      </ng-container>
+  
+      <!-- Unit -->
+      <ng-container matColumnDef="unitName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Unit</th>
+        <td mat-cell *matCellDef="let ticket">{{ ticket.unitName }}</td>
+      </ng-container>
+  
+      <!-- Created Date -->
+      <ng-container matColumnDef="ticketCreatedDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Created</th>
+        <td mat-cell *matCellDef="let ticket">{{ ticket.ticketCreatedDate | date: 'mediumDate' }}</td>
+      </ng-container>
+  
+      <!-- Expiry Date -->
+      <ng-container matColumnDef="ticketExpiryDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Expires</th>
+        <td mat-cell *matCellDef="let ticket">{{ ticket.ticketExpiryDate | date: 'mediumDate' }}</td>
+      </ng-container>
+  
+      <!-- Status -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef>Status</th>
+        <td mat-cell *matCellDef="let ticket">
+          <span class="status-badge" [ngClass]="isActive(ticket.ticketExpiryDate) ? 'active' : 'expired'">
+            {{ isActive(ticket.ticketExpiryDate) ? 'Active' : 'Expired' }}
+          </span>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </mat-card>
+</div>
+

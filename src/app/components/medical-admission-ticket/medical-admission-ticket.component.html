@@ -1,57 +1,84 @@
 <div class="all">
-    <mat-card>    <h2>Create Medical Admission Ticket</h2>
-        <form [formGroup]="ticketForm" (ngSubmit)="submit()">
-      
-          <mat-form-field appearance="fill">
+  <div class="form-wrapper">
+    <mat-card class="form-container">
+      <div class="form-header">
+        <h2>Create Medical Admission Ticket</h2>
+        <p>Complete the form below to generate a new admission ticket for a patient.</p>
+      </div>
+  
+      <form [formGroup]="ticketForm" (ngSubmit)="submit()" class="ticket-form">
+        <div class="form-row">
+          <mat-form-field appearance="outline" class="half-width">
             <mat-label>Patient ID</mat-label>
-            <input matInput formControlName="patientId" type="number" />
+            <input matInput formControlName="patientId" type="number" required />
+            <mat-error *ngIf="ticketForm.get('patientId')?.hasError('required')">
+              Patient ID is required
+            </mat-error>
           </mat-form-field>
-      
-          <mat-form-field appearance="fill">
+  
+          <mat-form-field appearance="outline" class="half-width">
             <mat-label>Facility</mat-label>
-            <mat-select formControlName="ehealthFacilityId">
+            <mat-select formControlName="ehealthFacilityId" required>
               <mat-option *ngFor="let facility of facilities" [value]="facility.ehealthFacilityId">
                 {{ facility.ehealthFacilityName }}
               </mat-option>
             </mat-select>
+            <mat-error *ngIf="ticketForm.get('ehealthFacilityId')?.hasError('required')">
+              Facility is required
+            </mat-error>
           </mat-form-field>
-      
-          <mat-form-field appearance="fill">
+        </div>
+  
+        <div class="form-row">
+          <mat-form-field appearance="outline" class="half-width">
             <mat-label>Doctor</mat-label>
-            <mat-select formControlName="doctorId">
+            <mat-select formControlName="doctorId" required>
               <mat-option *ngFor="let doctor of doctors" [value]="doctor.doctorId">
                 {{ doctor.doctorName }}
               </mat-option>
             </mat-select>
+            <mat-error *ngIf="ticketForm.get('doctorId')?.hasError('required')">
+              Doctor is required
+            </mat-error>
           </mat-form-field>
-      
-          <mat-form-field appearance="fill">
+  
+          <mat-form-field appearance="outline" class="half-width">
             <mat-label>Unit</mat-label>
-            <mat-select formControlName="unitId">
+            <mat-select formControlName="unitId" required>
               <mat-option *ngFor="let unit of units" [value]="unit.unitId">
                 {{ unit.unitName }}
               </mat-option>
             </mat-select>
+            <mat-error *ngIf="ticketForm.get('unitId')?.hasError('required')">
+              Unit is required
+            </mat-error>
           </mat-form-field>
-      
-          <mat-form-field appearance="fill">
-            <mat-label>Bed</mat-label>
-            <mat-select formControlName="bedId">
-              <mat-option *ngFor="let bed of beds" [value]="bed.bedId">
-                Bed {{ bed.bedNumber }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-      
-          <mat-form-field appearance="fill">
-            <mat-label>Provisional Diagnosis</mat-label>
-            <textarea matInput formControlName="provisionalDiagnosis"></textarea>
-          </mat-form-field>
-      
-          <button mat-raised-button color="primary" type="submit">Submit</button>
-        </form>
-      </mat-card>
+        </div>
+  
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Bed</mat-label>
+          <mat-select formControlName="bedId" required>
+            <mat-option *ngFor="let bed of beds" [value]="bed.bedId">
+              Bed {{ bed.bedNumber }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="ticketForm.get('bedId')?.hasError('required')">
+            Bed is required
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Provisional Diagnosis</mat-label>
+          <textarea matInput formControlName="provisionalDiagnosis" rows="5" placeholder="Enter diagnosis details"></textarea>
+        </mat-form-field>
+  
+        <div class="form-actions">
+          <button mat-raised-button color="primary" type="submit" [disabled]="ticketForm.invalid">Submit</button>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+  
 </div>
 
 
-  

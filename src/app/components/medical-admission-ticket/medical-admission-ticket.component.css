@@ -1,48 +1,312 @@
-:host {
-    display: flex;
-    justify-content: center;
-    padding: 24px;
-    background-color: #f9fafb;
-    box-sizing: border-box;
-    height: 100%;
-  }
-  
 .all{
-    padding-top: 120px;
+  padding-top: 60px;
 }
 
-  mat-card {
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 48px 24px;
+  background: linear-gradient(180deg, #f0f4f8 0%, #e5e9ed 100%);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 900px; /* Increased from 800px for a slightly larger form */
+  padding: 32px; /* Increased from 24px for more space */
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+  background-color: #ffffff;
+  transition: transform 0.2s ease;
+}
+
+.form-container:hover {
+  transform: translateY(-2px);
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.form-header h2 {
+  font-size: 32px; /* Increased from 28px */
+  font-weight: 700;
+  color: #1a3c34;
+  margin-bottom: 12px;
+}
+
+.form-header p {
+  font-size: 18px; /* Increased from 16px */
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.ticket-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Increased from 16px */
+}
+
+.form-row {
+  display: flex;
+  gap: 20px; /* Increased from 16px */
+}
+
+.full-width {
+  width: 100%;
+}
+
+.half-width {
+  width: 50%;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px; /* Increased from 16px */
+}
+
+button[mat-raised-button] {
+  padding: 0 32px; /* Increased from 24px */
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
+  background-color: #1d4ed8;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[mat-raised-button]:hover:not(:disabled) {
+  background-color: #1e3a8a;
+  transform: translateY(-1px);
+}
+
+button[mat-raised-button]:disabled {
+  background-color: #d1d5db;
+  cursor: not-allowed;
+}
+
+mat-form-field {
+  font-size: 15px; /* Increased from 14px */
+}
+
+mat-form-field .mat-form-field-wrapper {
+  padding-bottom: 1.5em; /* Increased from 1.25em */
+}
+
+mat-error {
+  font-size: 12px;
+  color: #dc2626;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px; /* Increased from 80px */
+}
+
+::ng-deep .mat-form-field-outline {
+  transition: all 0.3s ease;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  color: #1d4ed8 !important;
+}
+
+@media (max-width: 600px) {
+  .form-wrapper {
+    padding: 24px 16px;
+  }
+
+  .form-container {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .half-width {
     width: 100%;
-    max-width: 800px;
-    padding: 24px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
-  
-  mat-card-title {
-    margin-bottom: 16px;
-    font-size: 24px;
-    font-weight: 600;
-    text-align: center;
+
+  .form-header h2 {
+    font-size: 26px;
   }
-  
-  form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
+
+  .form-header p {
+    font-size: 15px;
   }
-  
+
+  .form-actions {
+    margin-top: 16px;
+  }
+
+  button[mat-raised-button] {
+    padding: 0 24px;
+    font-size: 14px;
+  }
+
   mat-form-field {
-    flex: 1 1 48%;
-    min-width: 240px;
+    font-size: 14px;
   }
-  
-  .full-width {
-    flex: 1 1 100%;
+
+  textarea {
+    min-height: 80px;
   }
-  
-  button {
-    margin-top: 24px;
-    display: block;
-    margin-left: auto;
+}
+
+.form-container {
+  max-width: 900px;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+  background-color: #ffffff;
+  max-height: 70vh; /* Set maximum height to enable scrolling */
+  overflow-y: auto; /* Enable vertical scrolling inside the card */
+  display: flex;
+  flex-direction: column; /* Ensure content stacks vertically */
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.form-header h2 {
+  font-size: 28px; /* Adjusted to match other components */
+  font-weight: 600;
+  color: #1a3c34;
+  margin-bottom: 12px;
+}
+
+.form-header p {
+  font-size: 16px; /* Adjusted to match other components */
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.ticket-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.half-width {
+  width: 50%;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+button[mat-raised-button] {
+  padding: 0 32px;
+  font-size: 16px;
+  font-weight: 500; /* Adjusted to match other components */
+  border-radius: 8px; /* Adjusted to match other components */
+  transition: background-color 0.3s ease;
+}
+
+button[mat-raised-button]:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+button[mat-raised-button]:disabled {
+  opacity: 0.6; /* Adjusted to match other components */
+  cursor: not-allowed;
+}
+
+mat-form-field {
+  font-size: 14px; /* Adjusted to match other components */
+}
+
+mat-form-field .mat-form-field-wrapper {
+  padding-bottom: 1.5em;
+}
+
+mat-error {
+  font-size: 12px;
+  color: #dc2626;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-size: 14px; /* Added for consistency */
+  color: #374151; /* Added for consistency */
+}
+
+/* Custom scrollbar styling */
+.form-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.form-container::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.form-container::-webkit-scrollbar-thumb {
+  background: #6b7280;
+  border-radius: 4px;
+}
+
+.form-container::-webkit-scrollbar-thumb:hover {
+  background: #1a3c34;
+}
+
+@media (max-width: 600px) {
+  .form-container {
+      padding: 20px;
+      border-radius: 12px;
+      max-height: 60vh; /* Adjusted for mobile */
   }
-  
+
+  .form-row {
+      flex-direction: column;
+      gap: 12px;
+  }
+
+  .half-width {
+      width: 100%;
+  }
+
+  .form-header h2 {
+      font-size: 24px;
+  }
+
+  .form-header p {
+      font-size: 14px;
+  }
+
+  .form-actions {
+      margin-top: 16px;
+  }
+
+  button[mat-raised-button] {
+      padding: 0 24px;
+      font-size: 14px;
+  }
+
+  mat-form-field {
+      font-size: 14px;
+  }
+
+  textarea {
+      min-height: 80px;
+  }
+}
